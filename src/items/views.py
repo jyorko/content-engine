@@ -64,7 +64,7 @@ def item_upload_view(request, id=None):
     ).client
         prefix = instance.get_prefix()
         key = f"{prefix}{name}"
-        url = client.generate_presigned_url('put_object', Params={"Bucket": AWS_BUCKET_NAME, "Key": key}, ExpiresIn=3600)
+        url = client.generate_presigned_url('put_object', Params={"Bucket": AWS_BUCKET_NAME, "Key": key}, ExpiresIn=60)
         return JsonResponse({"url": url, 'filename': name})
     return render(request, template_name, 
                     {

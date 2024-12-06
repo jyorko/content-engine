@@ -26,9 +26,7 @@ ENV PYTHONPATH=/app
 EXPOSE 8000
 
 
-# Add a script to run the migrations and start the server
-COPY entrypoint.sh /app/
-COPY wait-for-it.sh /app/
+
 
 RUN chmod +x /app/wait-for-it.sh
 RUN chmod +x /app/entrypoint.sh
